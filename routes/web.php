@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get("usuario/mobilelogin","UsuarioController@mobilelogin");
+Route::get("usuario/getusers","UsuarioController@getusers");

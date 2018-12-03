@@ -25,4 +25,10 @@ class UsuarioController extends Controller
             }          
         }     
     }
+
+
+    public function getusers(Request $request){
+        $users = Usuario::select('id','nome','login','grupo_usuario_id','parentesco')->get();
+        return Response()->json($users);
+    }
 }
