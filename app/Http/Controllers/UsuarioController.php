@@ -31,4 +31,25 @@ class UsuarioController extends Controller
         $users = Usuario::select('id','nome','login','grupo_usuario_id','parentesco')->get();
         return Response()->json($users);
     }
+
+    public function insert(Request $request){
+        if( $request->input('id') == null || empty($request->input('id')) ){
+            //insert
+            $user = new Usuario();
+        }else{
+            //update
+            $user = Usuario::find($request->input('id'));
+        }
+        $user->nome = $request->input('nome');  
+        $user->login = $request->input('login');
+        $user->senha = sha1(sha1(trim("123456")));
+        $user->grupo_usuario_id = 2;
+        $user->parentesco = $request->input('parentesco');
+        
+        if($user->save()){
+            return Response()->json($user);
+        }else{
+            return Response("0",500);
+        }
+    }
 }

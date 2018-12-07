@@ -11,7 +11,7 @@ class Usuario extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'nome', 'login', 'senha', 'grupo_usuario_id',
+        'nome', 'login', 'senha', 'grupo_usuario_id', 'parentesco'
     ];
 
 }
