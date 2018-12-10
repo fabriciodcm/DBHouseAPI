@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::get("usuario/mobilelogin","UsuarioController@mobilelogin");
 Route::get("usuario/getusers","UsuarioController@getusers");
 Route::get("usuario/insert","UsuarioController@insert");
+Route::get("comodo/getcomodos","ComodoController@getcomodos");
